@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "PublicSans";
+  font-weight: 300;
+  src: url("./assets/fonts/PublicSans-Light.otf");
+}
+
+@font-face {
+  font-family: "PublicSans";
+  font-weight: 400;
+  src: url("./assets/fonts/PublicSans-Regular.otf");
+}
+
+@font-face {
+  font-family: "PublicSans";
+  font-weight: 700;
+  src: url("./assets/fonts/PublicSans-Bold.otf");
+}

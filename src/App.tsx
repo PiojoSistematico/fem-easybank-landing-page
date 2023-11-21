@@ -18,6 +18,7 @@ import imgConfetti from "./assets/images/image-confetti.jpg";
 import {
   IconFacebook,
   IconInstagram,
+  IconLogo,
   IconPinterest,
   IconTwitter,
   IconYoutube,
@@ -33,25 +34,18 @@ function App() {
     <>
       <Menu></Menu>
       <main className="bg-neutral-2 font-PublicSans text-lg font-normal text-neutral-1">
-        <section title="hero" className="bg-neutral-3 pb-8">
-          <picture className="relative">
+        <section
+          title="hero"
+          className="flex flex-col gap-4 bg-neutral-3 pb-8 md:grid md:grid-cols-2"
+        >
+          <picture className="relative h-96 w-full overflow-hidden bg-[url(src/assets/images/bg-intro-mobile.svg)] bg-cover bg-center bg-no-repeat md:order-1 md:bg-[url(src/assets/images/bg-intro-desktop.svg)]">
             <img
               src={mockups}
               alt="cellphone mockups"
-              className="absolute z-10 h-40 w-full object-contain"
-            />
-            <img
-              src={bgMobile}
-              alt="background image"
-              className="w-full object-contain md:hidden"
-            />
-            <img
-              src={bgDesktop}
-              alt="background image"
-              className="hidden w-full object-contain md:block"
+              className="absolute left-1/2 top-0 z-10 w-full -translate-x-1/2 -translate-y-1/4 object-contain"
             />
           </picture>
-          <div className="flex flex-col items-center gap-4 text-center">
+          <div className="md:order-0 flex flex-col items-center gap-4 text-center md:items-start md:self-center md:pl-8 md:text-left">
             <h1 className="text-3xl text-primary-1">
               Next generation digital banking
             </h1>
@@ -67,15 +61,15 @@ function App() {
         </section>
         <section
           title="details"
-          className="flex flex-col items-center gap-8 px-4 py-8 text-center"
+          className="flex flex-col items-center gap-8 px-4 py-8 text-center md:items-start md:px-8 md:text-left"
         >
           <h2 className="text-2xl text-primary-1">Why choose Easybank?</h2>
           <p>
             We leverage Open Banking to turn your bank account into your
             financial hub. Control your finances like never before.
           </p>
-          <div className="flex flex-col items-center gap-8">
-            <article className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
+            <article className="flex flex-col items-center gap-4 md:items-start">
               <picture>
                 <img src={iconOnline} alt="" />
               </picture>
@@ -85,7 +79,7 @@ function App() {
                 of your finances wherever you are in the world.
               </p>
             </article>
-            <article className="flex flex-col items-center gap-4">
+            <article className="flex flex-col items-center gap-4 md:items-start">
               <picture>
                 <img src={iconBudgeting} alt="" />
               </picture>
@@ -95,7 +89,7 @@ function App() {
                 notifications when you’re close to hitting your limits.
               </p>
             </article>
-            <article className="flex flex-col items-center gap-4">
+            <article className="flex flex-col items-center gap-4 md:items-start">
               <picture>
                 <img src={iconOnboarding} alt="" />
               </picture>
@@ -105,7 +99,7 @@ function App() {
                 start taking control of your finances right away.
               </p>
             </article>
-            <article className="flex flex-col items-center gap-4">
+            <article className="flex flex-col items-center gap-4 md:items-start">
               <picture>
                 <img src={iconAPI} alt="" />
               </picture>
@@ -117,116 +111,142 @@ function App() {
             </article>
           </div>
         </section>
-        <section className="flex flex-col items-center gap-8 bg-neutral-3 px-8 py-12">
+        <section className="flex flex-col items-center gap-8 bg-neutral-3 px-8 py-12  md:items-start">
           <h2 className="text-2xl text-primary-1">Latest Articles</h2>
-          <article className="overflow-hidden rounded-lg bg-neutral-4">
-            <picture>
-              <img src={imgCurrency} alt="" className="w-full object-contain" />
-            </picture>
-            <div className="flex flex-col gap-4 p-4">
-              <span className="text-sm font-light">By Claire Robinson</span>
-              <h4 className="text-xl text-primary-1">
-                Receive money in any currency with no fees
-              </h4>
-              <p>
-                The world is getting smaller and we’re becoming more mobile. So
-                why should you be forced to only receive money in a single …
-              </p>
-            </div>
-          </article>
-          <article className="overflow-hidden rounded-lg bg-neutral-4">
-            <picture>
-              <img src={imgRestaurant} alt="" />
-            </picture>
-            <div className="flex flex-col gap-4 p-4">
-              <span className="text-sm font-light">By Wilson Hutton</span>
-              <h4 className="text-xl text-primary-1">
-                Treat yourself without worrying about money
-              </h4>
-              <p>
-                Our simple budgeting feature allows you to separate out your
-                spending and set realistic limits each month. That means you …
-              </p>
-            </div>
-          </article>
-          <article className="overflow-hidden rounded-lg bg-neutral-4">
-            <picture>
-              <img src={imgPlane} alt="" />
-            </picture>
-            <div className="flex flex-col gap-4 p-4">
-              <span className="text-sm font-light">By Wilson Hutton</span>
-              <h4 className="text-xl text-primary-1">
-                Take your Easybank card wherever you go
-              </h4>
-              <p>
-                We want you to enjoy your travels. This is why we don’t charge
-                any fees on purchases while you’re abroad. We’ll even show you …
-              </p>
-            </div>
-          </article>
-          <article className="overflow-hidden rounded-lg bg-neutral-4">
-            <picture>
-              <img src={imgConfetti} alt="" />
-            </picture>
-            <div className="flex flex-col gap-4 p-4">
-              <span className="text-sm font-light">By Claire Robinson</span>
-              <h4 className="text-xl text-primary-1">
-                Our invite-only Beta accounts are now live!
-              </h4>
-              <p>
-                After a lot of hard work by the whole team, we’re excited to
-                launch our closed beta. It’s easy to request an invite through
-                the site ...
-              </p>
-            </div>
-          </article>
+
+          <div className="flex flex-col items-center gap-8 bg-neutral-3 md:flex-row md:items-stretch">
+            <article className="overflow-hidden rounded-lg bg-neutral-4">
+              <picture className="md:h-96">
+                <img
+                  src={imgCurrency}
+                  alt=""
+                  className="w-full object-contain md:h-[200px] md:object-cover"
+                />
+              </picture>
+              <div className="flex flex-col gap-4 p-4">
+                <span className="text-sm font-light">By Claire Robinson</span>
+                <h4 className="text-xl text-primary-1">
+                  Receive money in any currency with no fees
+                </h4>
+                <p>
+                  The world is getting smaller and we’re becoming more mobile.
+                  So why should you be forced to only receive money in a single
+                  …
+                </p>
+              </div>
+            </article>
+            <article className="overflow-hidden rounded-lg bg-neutral-4">
+              <picture>
+                <img
+                  src={imgRestaurant}
+                  alt=""
+                  className="w-full object-contain md:h-[200px] md:object-cover"
+                />
+              </picture>
+              <div className="flex flex-col gap-4 p-4">
+                <span className="text-sm font-light">By Wilson Hutton</span>
+                <h4 className="text-xl text-primary-1">
+                  Treat yourself without worrying about money
+                </h4>
+                <p>
+                  Our simple budgeting feature allows you to separate out your
+                  spending and set realistic limits each month. That means you …
+                </p>
+              </div>
+            </article>
+            <article className="overflow-hidden rounded-lg bg-neutral-4">
+              <picture>
+                <img
+                  src={imgPlane}
+                  alt=""
+                  className="w-full object-contain md:h-[200px] md:object-cover"
+                />
+              </picture>
+              <div className="flex flex-col gap-4 p-4">
+                <span className="text-sm font-light">By Wilson Hutton</span>
+                <h4 className="text-xl text-primary-1">
+                  Take your Easybank card wherever you go
+                </h4>
+                <p>
+                  We want you to enjoy your travels. This is why we don’t charge
+                  any fees on purchases while you’re abroad. We’ll even show you
+                  …
+                </p>
+              </div>
+            </article>
+            <article className="overflow-hidden rounded-lg bg-neutral-4">
+              <picture>
+                <img
+                  src={imgConfetti}
+                  alt=""
+                  className="w-full object-contain md:h-[200px] md:object-cover"
+                />
+              </picture>
+              <div className="flex flex-col gap-4 p-4">
+                <span className="text-sm font-light">By Claire Robinson</span>
+                <h4 className="text-xl text-primary-1">
+                  Our invite-only Beta accounts are now live!
+                </h4>
+                <p>
+                  After a lot of hard work by the whole team, we’re excited to
+                  launch our closed beta. It’s easy to request an invite through
+                  the site ...
+                </p>
+              </div>
+            </article>
+          </div>
         </section>
       </main>
-      <footer className="flex flex-col items-center gap-8 bg-primary-1 p-8 text-neutral-4">
-        <div className="flex flex-col items-center gap-8">
-          <picture>
-            <img src={logo} alt="" />
-          </picture>
-          <div className="flex flex-row gap-4">
-            <a href="#">
-              <IconFacebook></IconFacebook>
-            </a>
-            <a href="#">
-              <IconYoutube></IconYoutube>
-            </a>
-            <a href="#">
-              <IconTwitter></IconTwitter>
-            </a>
-            <a href="#">
-              <IconPinterest></IconPinterest>
-            </a>
-            <a href="#">
-              <IconInstagram></IconInstagram>
-            </a>
+      <footer className="flex flex-col items-center gap-8 bg-primary-1 p-8 text-neutral-4 md:flex-row md:justify-between">
+        <div className="flex flex-col items-center gap-8 md:flex-row md:gap-16">
+          <div className="flex flex-col items-center gap-8">
+            <picture className="text-neutral-4">
+              <IconLogo></IconLogo>
+            </picture>
+            <div className="flex flex-row gap-4">
+              <a href="#">
+                <IconFacebook></IconFacebook>
+              </a>
+              <a href="#">
+                <IconYoutube></IconYoutube>
+              </a>
+              <a href="#">
+                <IconTwitter></IconTwitter>
+              </a>
+              <a href="#">
+                <IconPinterest></IconPinterest>
+              </a>
+              <a href="#">
+                <IconInstagram></IconInstagram>
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-8 md:flex-row md:gap-16">
+            <ul className="flex flex-col items-center gap-2 text-neutral-3 md:items-start">
+              <li>
+                <a href="#">About Us</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <a href="#">Blog</a>
+              </li>
+            </ul>
+            <ul className="flex flex-col items-center gap-2 text-neutral-3  md:items-start">
+              <li>
+                <a href="#">Careers</a>
+              </li>
+              <li>
+                <a href="#">Support</a>
+              </li>
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
+            </ul>
           </div>
         </div>
-        <div>
-          <ul className="flex flex-col items-center gap-2 text-neutral-3">
-            <li>
-              <a href="#">About Us</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-            <li>
-              <a href="#">Blog</a>
-            </li>
-            <li>
-              <a href="#">Careers</a>
-            </li>
-            <li>
-              <a href="#">Support</a>
-            </li>
-            <li>
-              <a href="#">Privacy Policy</a>
-            </li>
-          </ul>
-        </div>
+
         <div className="flex flex-col items-center gap-4">
           <Button className="rounded-3xl bg-gradient-to-r from-primary-2 to-primary-3 px-6 py-2 text-neutral-4">
             Request Invite

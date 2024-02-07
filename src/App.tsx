@@ -1,24 +1,19 @@
 import { useState } from "react";
 
-import logo from "./assets/images/logo.svg";
-import bgMobile from "./assets/images/bg-intro-mobile.svg";
-import bgDesktop from "./assets/images/bg-intro-desktop.svg";
 import mockups from "./assets/images/image-mockups.png";
-
-import iconOnline from "./assets/images/icon-online.svg";
-import iconBudgeting from "./assets/images/icon-budgeting.svg";
-import iconOnboarding from "./assets/images/icon-onboarding.svg";
-import iconAPI from "./assets/images/icon-api.svg";
-
 import imgCurrency from "./assets/images/image-currency.jpg";
 import imgRestaurant from "./assets/images/image-restaurant.jpg";
 import imgPlane from "./assets/images/image-plane.jpg";
 import imgConfetti from "./assets/images/image-confetti.jpg";
 
 import {
+  IconAPI,
+  IconBudgeting,
   IconFacebook,
   IconInstagram,
   IconLogo,
+  IconOnboarding,
+  IconOnline,
   IconPinterest,
   IconTwitter,
   IconYoutube,
@@ -36,7 +31,7 @@ function App() {
       <main className="bg-neutral-2 font-PublicSans text-lg font-normal text-neutral-1">
         <section
           title="hero"
-          className="flex flex-col gap-4 bg-neutral-3 pb-8 md:grid md:grid-cols-2"
+          className="flex flex-col gap-4 bg-neutral-3 pb-8 md:grid md:grid-cols-2 md:pl-8"
         >
           <picture className="relative h-96 w-full overflow-hidden bg-[url(src/assets/images/bg-intro-mobile.svg)] bg-cover bg-center bg-no-repeat md:order-1 md:bg-[url(src/assets/images/bg-intro-desktop.svg)]">
             <img
@@ -54,14 +49,14 @@ function App() {
               one-stop-shop for spending, saving, budgeting, investing, and much
               more.
             </p>
-            <Button className="rounded-3xl bg-gradient-to-r from-primary-2 to-primary-3 px-6 py-2 text-neutral-4">
+            <Button className="rounded-3xl bg-gradient-to-r from-primary-2 to-primary-3 px-6 py-2 text-neutral-4 hover:from-primary-2/60 hover:to-primary-3/60">
               Request Invite
             </Button>
           </div>
         </section>
         <section
           title="details"
-          className="flex flex-col items-center gap-8 px-4 py-8 text-center md:items-start md:px-8 md:text-left"
+          className="flex flex-col items-center gap-8 px-8 py-8 text-center md:items-start md:px-16 md:px-8 md:text-left"
         >
           <h2 className="text-2xl text-primary-1">Why choose Easybank?</h2>
           <p>
@@ -71,7 +66,7 @@ function App() {
           <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
             <article className="flex flex-col items-center gap-4 md:items-start">
               <picture>
-                <img src={iconOnline} alt="" />
+                <IconOnline></IconOnline>
               </picture>
               <h3 className="text-xl text-primary-1">Online Banking</h3>
               <p>
@@ -81,7 +76,7 @@ function App() {
             </article>
             <article className="flex flex-col items-center gap-4 md:items-start">
               <picture>
-                <img src={iconBudgeting} alt="" />
+                <IconBudgeting></IconBudgeting>
               </picture>
               <h3 className="text-xl text-primary-1">Simple Budgeting</h3>
               <p>
@@ -91,7 +86,7 @@ function App() {
             </article>
             <article className="flex flex-col items-center gap-4 md:items-start">
               <picture>
-                <img src={iconOnboarding} alt="" />
+                <IconOnboarding></IconOnboarding>
               </picture>
               <h3 className="text-xl text-primary-1">Fast Onboarding</h3>
               <p>
@@ -101,7 +96,7 @@ function App() {
             </article>
             <article className="flex flex-col items-center gap-4 md:items-start">
               <picture>
-                <img src={iconAPI} alt="" />
+                <IconAPI></IconAPI>
               </picture>
               <h3 className="text-xl text-primary-1">Open API</h3>
               <p>
@@ -111,7 +106,7 @@ function App() {
             </article>
           </div>
         </section>
-        <section className="flex flex-col items-center gap-8 bg-neutral-3 px-8 py-12  md:items-start">
+        <section className="flex flex-col items-center gap-8 bg-neutral-3 px-8 py-12 md:items-start  md:px-16">
           <h2 className="text-2xl text-primary-1">Latest Articles</h2>
 
           <div className="flex flex-col items-center gap-8 bg-neutral-3 md:flex-row md:items-stretch">
@@ -125,7 +120,7 @@ function App() {
               </picture>
               <div className="flex flex-col gap-4 p-4">
                 <span className="text-sm font-light">By Claire Robinson</span>
-                <h4 className="text-xl text-primary-1">
+                <h4 className="text-xl text-primary-1 hover:text-primary-2">
                   Receive money in any currency with no fees
                 </h4>
                 <p>
@@ -145,7 +140,7 @@ function App() {
               </picture>
               <div className="flex flex-col gap-4 p-4">
                 <span className="text-sm font-light">By Wilson Hutton</span>
-                <h4 className="text-xl text-primary-1">
+                <h4 className="text-xl text-primary-1 hover:text-primary-2">
                   Treat yourself without worrying about money
                 </h4>
                 <p>
@@ -164,7 +159,7 @@ function App() {
               </picture>
               <div className="flex flex-col gap-4 p-4">
                 <span className="text-sm font-light">By Wilson Hutton</span>
-                <h4 className="text-xl text-primary-1">
+                <h4 className="text-xl text-primary-1 hover:text-primary-2">
                   Take your Easybank card wherever you go
                 </h4>
                 <p>
@@ -184,7 +179,7 @@ function App() {
               </picture>
               <div className="flex flex-col gap-4 p-4">
                 <span className="text-sm font-light">By Claire Robinson</span>
-                <h4 className="text-xl text-primary-1">
+                <h4 className="text-xl text-primary-1 hover:text-primary-2">
                   Our invite-only Beta accounts are now live!
                 </h4>
                 <p>
@@ -197,50 +192,60 @@ function App() {
           </div>
         </section>
       </main>
-      <footer className="flex flex-col items-center gap-8 bg-primary-1 p-8 text-neutral-4 md:flex-row md:justify-between">
+      <footer className="flex flex-col items-center gap-8 bg-primary-1 p-8 text-neutral-4 md:flex-row md:justify-between md:px-16">
         <div className="flex flex-col items-center gap-8 md:flex-row md:gap-16">
           <div className="flex flex-col items-center gap-8">
             <picture className="text-neutral-4">
               <IconLogo></IconLogo>
             </picture>
-            <div className="flex flex-row gap-4">
-              <a href="#">
-                <IconFacebook></IconFacebook>
-              </a>
-              <a href="#">
-                <IconYoutube></IconYoutube>
-              </a>
-              <a href="#">
-                <IconTwitter></IconTwitter>
-              </a>
-              <a href="#">
-                <IconPinterest></IconPinterest>
-              </a>
-              <a href="#">
-                <IconInstagram></IconInstagram>
-              </a>
-            </div>
+            <ul className="flex flex-row gap-4">
+              <li className="hover:text-primary-2">
+                <a href="#">
+                  <IconFacebook></IconFacebook>
+                </a>
+              </li>
+              <li className="hover:text-primary-2">
+                <a href="#">
+                  <IconYoutube></IconYoutube>
+                </a>
+              </li>
+              <li className="hover:text-primary-2">
+                <a href="#">
+                  <IconTwitter></IconTwitter>
+                </a>
+              </li>
+              <li className="hover:text-primary-2">
+                <a href="#">
+                  <IconPinterest></IconPinterest>
+                </a>
+              </li>
+              <li className="hover:text-primary-2">
+                <a href="#">
+                  <IconInstagram></IconInstagram>
+                </a>
+              </li>
+            </ul>
           </div>
           <div className="flex flex-col items-center gap-8 md:flex-row md:gap-16">
             <ul className="flex flex-col items-center gap-2 text-neutral-3 md:items-start">
-              <li>
+              <li className="hover:text-primary-2">
                 <a href="#">About Us</a>
               </li>
-              <li>
+              <li className="hover:text-primary-2">
                 <a href="#">Contact</a>
               </li>
-              <li>
+              <li className="hover:text-primary-2">
                 <a href="#">Blog</a>
               </li>
             </ul>
             <ul className="flex flex-col items-center gap-2 text-neutral-3  md:items-start">
-              <li>
+              <li className="hover:text-primary-2">
                 <a href="#">Careers</a>
               </li>
-              <li>
+              <li className="hover:text-primary-2">
                 <a href="#">Support</a>
               </li>
-              <li>
+              <li className="hover:text-primary-2">
                 <a href="#">Privacy Policy</a>
               </li>
             </ul>
@@ -248,7 +253,7 @@ function App() {
         </div>
 
         <div className="flex flex-col items-center gap-4">
-          <Button className="rounded-3xl bg-gradient-to-r from-primary-2 to-primary-3 px-6 py-2 text-neutral-4">
+          <Button className="rounded-3xl bg-gradient-to-r from-primary-2 to-primary-3 px-6 py-2 text-neutral-4 hover:from-primary-2/60 hover:to-primary-3/60">
             Request Invite
           </Button>
           <span className="text-neutral-1">

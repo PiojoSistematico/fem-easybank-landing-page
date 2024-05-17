@@ -4,7 +4,7 @@ import { IconLogo } from "./Icons";
 
 const Menu = () => {
   return (
-    <header className="flex flex-row items-center justify-between bg-neutral-4 px-8 font-PublicSans text-lg font-normal text-neutral-1 md:px-16">
+    <header className="flex flex-row items-center justify-between bg-neutral-4 p-4 font-PublicSans text-lg font-normal text-neutral-1 md:px-16">
       <a href="#" className="text-primary-1">
         <IconLogo></IconLogo>
       </a>

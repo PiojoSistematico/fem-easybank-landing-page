@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import mockups from "./assets/images/image-mockups.png";
 import imgCurrency from "./assets/images/image-currency.jpg";
 import imgRestaurant from "./assets/images/image-restaurant.jpg";
@@ -23,8 +21,6 @@ import Menu from "./components/Menu";
 import { Button } from "react-aria-components";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Menu></Menu>
@@ -56,7 +52,7 @@ function App() {
         </section>
         <section
           title="details"
-          className="flex flex-col items-center gap-8 px-8 py-8 text-center md:items-start md:px-16 md:px-8 md:text-left"
+          className="flex flex-col items-center gap-8 px-8 py-8 text-center md:items-start md:px-16 md:text-left"
         >
           <h2 className="text-2xl text-primary-1">Why choose Easybank?</h2>
           <p>
